@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Hospital Emergency Services Portal">
+  <title>Hospital Emergency Services</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<style>
+  
+  body {
+    font-family: 'Arial', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, white, #00c6ff); 
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  header {
+    background-color: blue; 
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  header h1 {
+    margin: 0;
+    font-size: 2.5em;
+  }
+  
+  header p {
+    font-size: 1.2em;
+    margin-top: 10px;
+    color: #f8f8f8;
+  }
+  
+  section {
+    background-color: #fff;
+    color: #333;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    font-size: 4cap;
+    margin-bottom: 10px;
+    color: #007bff; 
+  }
+  
+  ul {
+    list-style-type: disc;
+    padding-left: 20px;
+  }
+  
+  ul li {
+    margin-bottom: 10px;
+  }
+  
+  
+  .contact-info a {
+    color: #ff4747; 
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .contact-info a:hover {
+    text-decoration: underline;
+  }
+  
+  
+  .get-directions {
+    display: inline-block;
+    padding: 15px 25px;
+    background-color: #28a745; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    text-align: center;
+    text-decoration: none;
+  }
+  
+  .get-directions:hover {
+    background-color: #218838;
+    transition: background-color 0.3s ease;
+  }
+  
+  
+  #map {
+    width: 100%;
+    height: 300px;
+    margin: 20px 0;
+  }
+  
+  footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  
+  @media (max-width: 768px) {
+    header h1 {
+      font-size: 2em;
+    }
+  
+    header p {
+      font-size: 1em;
+    }
+  
+    .get-directions {
+      font-size: 1em;
+      padding: 10px 20px;
+    }
+  }
+  </style>
+<body>
+  <div class="container">
+    <header>
+      <h1>Emergency Services Portal</h1>
+      <p>If you are facing a medical emergency, follow the guidelines below or contact us immediately.</p>
+    </header>
+
+    <!-- Emergency Guidelines Section -->
+    <section id="guidelines">
+      <h2>Emergency Guidelines</h2>
+      <ul>
+        <li><strong>Assess the Situation:</strong> If someone is in danger or experiencing a medical emergency, act quickly.</li>
+        <li><strong>Call for Help:</strong> Use the contact numbers provided to get help immediately.</li>
+        <li><strong>Provide First Aid:</strong> Administer first aid if you are trained, or follow instructions over the phone.</li>
+        <li><strong>Stay Calm:</strong> Keep the patient comfortable and wait for emergency services to arrive.</li>
+      </ul>
+    </section>
+
+    <!-- Emergency Contacts Section -->
+    <section id="contacts">
+      <h2>Emergency Contact Numbers</h2>
+      <div class="contact-info">
+        <p><strong>Hospital Emergency Hotline:</strong> <a href="tel:+1234567890" class="emergency-number">+1-234-567-890</a></p>
+        <p><strong>Ambulance Services:</strong> <a href="tel:+0987654321">+0-987-654-321</a></p>
+        <p><strong>Poison Control:</strong> <a href="tel:+94 7671 84 947">+1-122-334-455</a></p>
+      </div>
+    </section>
+
+    <!-- GPS Directions Section -->
+    <section id="directions">
+      <h2>Get Directions to Our Hospital</h2>
+      <p>Click the button below to get GPS-enabled directions to the hospital from your location.</p>
+      <div id="map"></div>
+      <a href="#" class="get-directions" onclick="getLocation()">Get Directions</a>
+    </section>
+  </div>
+
+  <footer>
+    <p>In case of an emergency, contact your nearest hospital immediately.</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&callback=initMap"></script>
+
+</body>
+</html>

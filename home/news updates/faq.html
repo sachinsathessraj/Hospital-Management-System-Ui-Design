@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ</title>
+    <style>
+        .faq-item {
+            margin-bottom: 10px;
+        }
+        .faq-question {
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .faq-answer {
+            display: none;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="faq-container"></div>
+
+    <script>
+        fetch('get_faq.php')
+        .then(response => response.json())
+        .then(faqItems => {
+            const container = document.getElementById('faq-container');
+            faqItems.forEach(item => {
+                container.innerHTML += `
+                    <div class="faq-item">
+                        <div class="faq-question">${item.question}</div>
+                        <div class="faq-answer">${item.answer}</div>
+                    </div>
+                `;
+            });
+
+            document.querySelectorAll('.faq-question').forEach(question => {
+                question.addEventListener('click', () => {
+                    question.nextElementSibling.style.display = 
+                        question.nextElementSibling.style.display === 'none' ? 'block' : 'none';
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,198 @@
+/* register.css */
+
+/* ===============================
+   CSS Variables for Theming
+   =============================== */
+   :root {
+    --primary-color: #0d6efd; /* Bootstrap Primary Blue */
+    --secondary-color: #6c757d; /* Bootstrap Secondary Gray */
+    --background-overlay: rgba(0, 123, 255, 0.6); /* Semi-transparent overlay */
+    --card-background: #ffffff; /* White Card Background */
+    --input-border: #ced4da; /* Light Gray Border */
+    --input-focus-border: var(--primary-color);
+    --button-hover-color: #0b5ed7;
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --modal-background: rgba(0, 0, 0, 0.5); /* Dark overlay for modals */
+}
+
+/* ===============================
+   Global Styles
+   =============================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    color: #343a40;
+    background-color: var(--background-color);
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+/* ===============================
+   Background Image and Overlay
+   =============================== */
+.bg-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://source.unsplash.com/1600x900/?hospital,healthcare') no-repeat center center/cover;
+    z-index: -2;
+    filter: brightness(0.7);
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--background-overlay);
+    z-index: -1;
+}
+
+/* ===============================
+   Container Styles
+   =============================== */
+.container {
+    position: relative;
+    z-index: 1;
+}
+
+/* ===============================
+   Card Styles
+   =============================== */
+.card {
+    border: none;
+    border-radius: 15px;
+}
+
+.card-body {
+    padding: 40px;
+}
+
+.card-title {
+    margin-bottom: 30px;
+    color: var(--primary-color);
+}
+
+/* ===============================
+   Input Group Styles
+   =============================== */
+.input-group-text {
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 5px 0 0 5px;
+}
+
+.form-control, .form-select {
+    border: 1px solid var(--input-border);
+    border-radius: 0 5px 5px 0;
+    transition: border-color 0.3s ease;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--input-focus-border);
+    box-shadow: 0 0 5px rgba(13, 110, 253, 0.5);
+}
+
+textarea.form-control {
+    border-radius: 5px;
+}
+
+/* ===============================
+   Button Styles
+   =============================== */
+.btn-primary {
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 5px;
+    padding: 12px;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--button-hover-color);
+    transform: translateY(-2px);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+/* ===============================
+   Signup Link Styles
+   =============================== */
+.signup p {
+    margin-bottom: 8px;
+    color: var(--secondary-color);
+}
+
+.signup a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.signup a:hover {
+    color: var(--button-hover-color);
+    text-decoration: underline;
+}
+
+/* ===============================
+   Modal Styles
+   =============================== */
+/* Optional: Customize Bootstrap modals if needed */
+.modal-content {
+    border-radius: 10px;
+}
+
+.modal-header {
+    background-color: var(--primary-color);
+    color: #fff;
+    border-bottom: none;
+}
+
+.modal-body {
+    font-size: 1rem;
+}
+
+.modal-footer {
+    border-top: none;
+}
+
+/* ===============================
+   Responsive Design
+   =============================== */
+@media (max-width: 768px) {
+    .card-body {
+        padding: 30px 20px;
+    }
+
+    .showcase-top h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .card-body {
+        padding: 20px 15px;
+    }
+
+    .input-group-text {
+        border-radius: 5px 5px 0 0;
+    }
+
+    .form-control, .form-select {
+        border-radius: 0 0 5px 5px;
+    }
+}

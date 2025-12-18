@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Feedback and Suggestion Box</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <h2>Patient Satisfaction Survey & Suggestion Box</h2>
+
+    <form action="submit_feedback.php" method="POST">
+        <label for="patient_name">Name (optional):</label>
+        <input type="text" id="patient_name" name="patient_name" placeholder="Your Name"><br><br>
+
+        <label for="rating">Rate our services:</label>
+        <select id="rating" name="rating">
+            <option value="5">Excellent</option>
+            <option value="4">Good</option>
+            <option value="3">Average</option>
+            <option value="2">Poor</option>
+            <option value="1">Very Poor</option>
+        </select><br><br>
+
+        <label for="comments">Comments/Suggestions:</label><br>
+        <textarea id="comments" name="comments" rows="5" cols="30" placeholder="Write your feedback here..."></textarea><br><br>
+
+        <input type="submit" value="Submit Feedback">
+    </form>
+</body>
+</html>

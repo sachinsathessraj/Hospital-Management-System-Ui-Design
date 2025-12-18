@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Chat</title>
+    <style>
+        #chat-container {
+            width: 300px;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+        #chat-messages {
+            height: 200px;
+            overflow-y: scroll;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="chat-container">
+        <div id="chat-messages"></div>
+        <input type="text" id="message-input" placeholder="Type your message...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <script>
+        function sendMessage() {
+            const input = document.getElementById('message-input');
+            const message = input.value;
+            if (message) {
+                fetch('chat_handler.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: 'message=' + encodeURIComponent(message)
+                })
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('chat-messages').innerHTML += '<p>' + data + '</p>';
+                    input.value = '';
+                });
+            }
+        }
+
+        // Poll for new messages every 5 seconds
+        setInterval(() => {
+            fetch('get_messages.php')
+            .then(response => response.json())
+            .then(messages => {
+                const chatMessages = document.getElementById('chat-messages');
+                chatMessages.innerHTML = '';
+                messages.forEach(msg => {
+                    chatMessages.innerHTML += '<p>' + msg + '</p>';
+                });
+            });
+        }, 5000);
+    </script>
+</body>
+</html>

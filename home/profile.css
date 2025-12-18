@@ -1,0 +1,223 @@
+/* profile.css */
+
+/* ===================================================
+   CSS Variables for Theming and Consistency
+   =================================================== */
+   :root {
+    --primary-color: #87CEEB;         /* Main brand color */
+    --primary-hover: #357ABD;         /* Darker shade for hover effects */
+    --secondary-color: #E94E77;       /* Accent color */
+    --secondary-hover: #c82333;       /* Darker shade for hover effects */
+    --background-color: #f0f2f5;      /* Light gray background */
+    --text-color: #333333;            /* Standard text color */
+    --input-border: #cccccc;          /* Border color for inputs */
+    --input-focus-border: #4A90E2;    /* Border color on focus */
+    --button-text-color: #ffffff;     /* Button text color */
+    --error-bg: #f8d7da;              /* Background for error messages */
+    --error-text: #721c24;            /* Text color for error messages */
+    --success-bg: #d4edda;            /* Background for success messages */
+    --success-text: #155724;          /* Text color for success messages */
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Base font */
+}
+
+/* ===================================================
+   Reset and Base Styles
+   =================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ===================================================
+   Header Styles
+   =================================================== */
+header {
+    background-color: var(--primary-color);
+    color: var(--button-text-color);
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 28px;
+    font-weight: 600;
+}
+
+header a {
+    background-color: var(--secondary-color);
+    color: var(--button-text-color);
+    padding: 10px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+header a:hover {
+    background-color: var(--secondary-hover);
+    transform: translateY(-2px);
+}
+
+/* ===================================================
+   Profile Container
+   =================================================== */
+.profile-container {
+    max-width: 600px;
+    margin: 40px auto;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.profile-container:hover {
+    transform: translateY(-5px);
+}
+
+/* ===================================================
+   Feedback Messages
+   =================================================== */
+.error, .success {
+    padding: 15px 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.error {
+    background-color: var(--error-bg);
+    color: var(--error-text);
+}
+
+.success {
+    background-color: var(--success-bg);
+    color: var(--success-text);
+}
+
+/* ===================================================
+   Form Styles
+   =================================================== */
+.profile-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-container form label {
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #555555;
+}
+
+.profile-container form input,
+.profile-container form textarea {
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: 1px solid var(--input-border);
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-container form input:focus,
+.profile-container form textarea:focus {
+    border-color: var(--input-focus-border);
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+    outline: none;
+}
+
+.profile-container form input[disabled] {
+    background-color: #e9ecef;
+    cursor: not-allowed;
+}
+
+.profile-container form textarea {
+    resize: vertical;
+    height: 120px;
+}
+
+.profile-container form button {
+    padding: 14px;
+    background-color: var(--primary-color);
+    color: var(--button-text-color);
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.profile-container form button:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+}
+
+/* ===================================================
+   Responsive Design
+   =================================================== */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header a {
+        margin-top: 15px;
+    }
+
+    .profile-container {
+        padding: 30px;
+        margin: 20px;
+    }
+
+    .profile-container form input,
+    .profile-container form textarea {
+        font-size: 14px;
+        padding: 10px 12px;
+    }
+
+    .profile-container form button {
+        font-size: 16px;
+        padding: 12px;
+    }
+}
+
+@media (max-width: 576px) {
+    header h1 {
+        font-size: 22px;
+    }
+
+    header a {
+        padding: 8px 20px;
+        font-size: 14px;
+    }
+
+    .profile-container {
+        padding: 20px;
+        margin: 10px;
+    }
+
+    .profile-container form input,
+    .profile-container form textarea {
+        font-size: 14px;
+        padding: 10px 12px;
+    }
+
+    .profile-container form button {
+        font-size: 16px;
+        padding: 12px;
+    }
+}
