@@ -84,5 +84,4 @@ Hospital-Management-System-Ui-Design/
 **Satheesraj Sachin**
 
 * Email: [sachinsatheesraj75@gmail.com](mailto:sachinsatheesraj75@gmail.com)
-* LinkedIn: [[Your LinkedIn URL]](https://www.linkedin.com/in/satheesraj-sachin-67b983227/)
 
