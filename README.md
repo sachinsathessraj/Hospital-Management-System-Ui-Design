@@ -1,8 +1,3 @@
-# Hospital-Management-System-Ui-Design
-
-Here’s a professional and detailed README template for your **Hospital-Management-System-UI-Design** project. You can adjust it according to your exact features:
-
----
 
 # Hospital Management System UI Design
 
