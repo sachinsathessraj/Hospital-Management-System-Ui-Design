@@ -78,6 +78,12 @@ Hospital-Management-System-Ui-Design/
 * Enhance UI with advanced charts and analytics dashboards.
 
 ---
+## Production Deployment
+
+<img width="1680" height="963" alt="image" src="https://github.com/user-attachments/assets/5b2e5eec-dd88-47eb-bd57-db20d28561f3" />
+
+<img width="1680" height="962" alt="image" src="https://github.com/user-attachments/assets/81e38ea3-674e-4465-af41-e41a352d50cf" />
+
 
 ## Author
 
